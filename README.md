@@ -1,8 +1,13 @@
-# Devlab
+Devlab
+======
 
+# Requirements
+
+1. Your machine must have at least 4GB of RAM memory and 8GB of free disk space.
+1. Enable the virtualization feature at your computer. Check your BIOS setup.
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
    
-   Known working version:
+  Known working version:
 
    ```
    $ VBoxManage --version
@@ -13,7 +18,7 @@
 
 1. Install [Vagrant](http://www.vagrantup.com/downloads.html)
 
-   Known working version:
+  Known working version:
 
    ```
    $ vagrant --version
