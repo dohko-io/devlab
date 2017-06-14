@@ -227,7 +227,7 @@ Vagrant.configure("2") do |config|
       name: "supervisord",
       run: "always",
       privileged: false,
-      inline: "/usr/local/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf &"
+      path: "scripts/startup.sh"
 
     dohkolab.vm.provision :docker
     dohkolab.vm.provision :docker_compose
