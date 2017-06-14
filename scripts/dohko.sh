@@ -18,8 +18,16 @@
 
 set -e
 
+source /etc/maven
+source /etc/dohko
+source /etc/h2
+
+MAVEN_HOME="/opt/maven/bin/mvn"
+export PATH=$PATH:$MAVEN_HOME/bin
+
 cd /home/vagrant
-git clone https://github.com/alessandroleite/dohko.git && cd dohko
+git clone https://github.com/alessandroleite/dohko.git 
+cd /home/vagrant/dohko
 
 mvn install
 cd services

@@ -52,11 +52,9 @@ gunzip -f uniprot_sprot.fasta.gz
 rm -rf __MACOSX/
 
 #
-mkdir ${S_HOME}/sequences
+mkdir -p ${S_HOME}/sequences
 wget -qO- https://www.dropbox.com/s/ugm0y9pppimg6pl/sequences.tar.gz | tar xzvf - -C ${S_HOME}/sequences
 rm -rf __MACOSX .*.fasta
-
-mkdir ${S_HOME}/sequences
 
 chown -R vagrant:vagrant ${S_HOME} ${SSEARCH_HOME}
 

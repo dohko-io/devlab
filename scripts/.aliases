@@ -1,0 +1,3 @@
+#!/bin/bash
+
+alias dohko-client='java -cp ${DOHKO_HOME}/client/dohko-client.jar "$@"'

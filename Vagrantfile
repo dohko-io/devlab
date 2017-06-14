@@ -143,7 +143,9 @@ Vagrant.configure("2") do |config|
       rabbitmqctl set_user_tags excalibur administration
       rabbitmqctl set_permissions -p / excalibur ".*" ".*" ".*"
 
-      DOHKO_HOME=/opt/dohko
+      cp /home/vagrant/devlab/scripts/.aliases /etc
+
+      DOHKO_HOME="/opt/dohko"
 
       { \
         echo '#!/bin/sh'; \
@@ -202,6 +204,7 @@ Vagrant.configure("2") do |config|
         echo 'source /etc/maven' ; \
         echo 'source /etc/dohko' ; \
         echo 'source /etc/h2' ; \
+        echo 'source /etc/.aliases' ; \
         echo ; \
       } >> /home/vagrant/.bashrc
 
@@ -216,6 +219,11 @@ Vagrant.configure("2") do |config|
        privileged: true
 
     dohkolab.vm.provision "shell", 
+       name: "dohko",
+       path: "scripts/dohko.sh",
+       privileged: false
+
+    dohkolab.vm.provision "shell",
       name: "supervisord",
       run: "always",
       privileged: false,
